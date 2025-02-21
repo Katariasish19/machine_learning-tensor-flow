@@ -1,0 +1,69 @@
+Activation Functions:
+
+
+An activation function (also known as transfer function) is a mathematical function which converts
+the input to an output.Once an input or set of inputs is given to an input node, the activation
+functions helps to scale up the output of the node and introduces non-linear relationship in the 
+network.
+
+
+--> Activation Functions and Their Roles
+
+
+1. ReLU (Rectified Linear Unit):
+
+    -Purpose: Helps to mitigate the 'vanishing gradient' problem by allowing gradients to flow through the network.
+    -Behavior: Outputs the input directly if it is positive; otherwise, it outputs zero.
+    -Example: If the input is [-1, 0, 1, 2], the output will be [0, 0, 1, 2].
+
+    * Efficient and helps with vanishing gradients.
+    * Used in hidden layers to keep gradients flowing.
+    * Ex:  Image classification, object detection.
+
+2. Sigmoid:
+
+    -Purpose: Used in binary classification problems to output probabilities.
+    -Behavior: Squashes the input to a range between 0 and 1.
+    -Example: If the input is [-1, 0, 1, 2], the output will be [0.27, 0.5, 0.73, 0.88].
+
+    * Use in the output layer for binary classification tasks
+    * Ex : Insurance_prediction
+
+3. Tanh (Hyperbolic Tangent):
+
+    -Purpose: Centers the data by outputting values between -1 and 1.
+    -Behavior: Similar to Sigmoid but outputs values in the range of -1 to 1.
+    -Example: If the input is [-1, 0, 1, 2], the output will be [-0.76, 0, 0.76, 0.96].
+
+    * Use in hidden layers when you need centered data.
+    * Ex: Temperature_prediction
+
+
+4. Leaky ReLU:
+
+    -Purpose: Addresses the “dying ReLU” problem by allowing a small gradient when the input is negative.
+    -Behavior: Similar to ReLU but with a small slope for negative inputs.
+    -Example: If the input is [-1, 0, 1, 2], the output will be [-0.1, 0, 1, 2].
+
+    * Use in hidden layers to prevent dying neurons.
+    * Ex: Prediction of Buying a Product after adding to cart
+
+5. Softmax:
+
+    -Purpose: Used in multi-class classification problems to output probabilities that sum to 1.
+    -Behavior: Converts logits (raw prediction values) to probabilities.
+    -Example: If the input is [2, 1, 0.1], the output will be [0.66, 0.24, 0.10].
+
+    * Use in the output layer for multi-class classification tasks.
+    * Ex: Image classification with multiple categories.
+
+6. ELU (Exponential Linear Unit)
+
+    -Purpose: Helps with the vanishing gradient problem and can produce negative outputs, which helps to center the data.
+    -Behavior: Similar to ReLU but with a smoother transition for negative inputs.
+    -Example: If the input is [-1, 0, 1, 2], the output will be [-0.63, 0, 1, 2].
+
+    * Use in hidden layers when you need both ReLU and Tanh benefits.
+    * Ex: If you receive mail for New York, Los Angeles, and an unknown city, you keep the mail for New York and Los Angeles, 
+          and put the unknown mail in a special bin with a note for further review.
+
