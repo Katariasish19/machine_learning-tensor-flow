@@ -1,0 +1,64 @@
+***Choosing the Right Loss Function***
+
+1. Regression Problems:
+
+    - Mean Sqaure Error: When you want to penalize larger errors more heavily.
+
+        **Example**: Real-World Production Example: Predicting House Prices
+
+            Imagine you work for a real estate company that wants to predict house prices based on features like size, 
+            number of bedrooms, and location.
+
+        **Use Case**: You build a model to predict house prices using these features.
+        **Why MSE**: MSE is used because it penalizes larger errors more heavily.
+                    This is useful in scenarios where larger errors are particularly undesirable. 
+                    For example, if your model predicts a house price to be $300,000 but the actual price is $500,000,the
+                    error is $200,000.Squaring this error gives a much larger penalty,encouraging the model to avoid large errors.
+
+        **Example Calculation**:
+
+                Predicted prices: [300,000, 450,000, 500,000]
+                Actual prices: [350,000, 400,000, 550,000]
+                Errors: [-50,000, 50,000, -50,000]
+                Squared errors: [2,500,000,000, 2,500,000,000, 2,500,000,000]
+                MSE: (2,500,000,000 + 2,500,000,000 + 2,500,000,000) / 3 = 2,500,000,000
+
+
+
+    - Mean Absolute Error: When you want to treat all errors equally.
+
+        **Example**:  Real-World Production Example: Predicting Delivery Times
+
+            Imagine you work for a logistics company that wants to predict delivery times for packages. 
+            You have historical data on delivery times and various factors like distance, traffic conditions,
+            and weather.
+
+        **Use Case**: You build a model to predict delivery times based on these factors.
+        **Why MAE**: MAE is used because it treats all errors equally, making it easy to interpret.
+                        If your model predicts a delivery time of 30 minutes but the actual time is 40 minutes, 
+                        the error is 10 minutes. MAE will average these errors over all deliveries to give you a 
+                        clear picture of the model’s performance.
+
+        **Example Calculation**:
+
+                        Predicted times: [30, 45, 50]
+                        Actual times: [35, 40, 55]
+                        Errors: [5, 5, 5]
+                        MAE: (5 + 5 + 5) / 3 = 5 minutes
+
+
+    - Huber Loss: When you want a balance between MSE and MAE, especially with outliers.
+
+2. Classification Problems:
+
+    - Binary Cross-Entropy: For binary classification tasks. Works well with sigmoid activation in the output layer.
+    - Categorical Cross-Entropy: For multi-class classification tasks. Pairs well with softmax activation in the output layer
+    - Hinge Loss: For SVMs in binary classification.
+
+3. Special Cases:
+
+    - KL Divergence: When comparing probability distributions.
+    - Poisson Loss: For count data regression.
+    - Cosine Similarity Loss: For tasks involving similarity measures, like text or image similarity.
+
+
